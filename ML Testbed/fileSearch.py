@@ -2,7 +2,7 @@ import os
 import openai
 import chronological
 import asyncio
-openai.api_key = "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"
+openai.api_key = ""
 
 def main():
     filesID = ["file-dA1NAQP0COzQVIgVEmjgyEHR","file-nZYR9KwR4WMElBvnPzj9bTiV"]
