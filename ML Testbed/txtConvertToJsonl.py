@@ -1,5 +1,6 @@
 import jsonlines
 import re
+import os
 def convert(filename):
     file = open(filename,'r')
     text = file.read()
@@ -9,6 +10,8 @@ def convert(filename):
     textL[:] = [x for x in textL if x]
     for i in range(len(textL)):
         textL[i] = textL[i].replace("_","")
+        textL[i] = textL[i].replace("\n", " ")
+        textL[i] = textL[i].replace(r"\\", "")
     booknameMatch = re.search(r"([^\/]+$)",filename)
     bookName = booknameMatch.group()
     bookName=bookName[:-4]
@@ -16,7 +19,9 @@ def convert(filename):
         for line in textL:
             writer.write({'text': line, 'metadata': ''})
 def main():
-    filename = "Books/TXT/The Will to Power, Friedrich Nietzsche.txt"
-    convert(filename)
+    files = os.listdir("Books/TXT")
+    for filename in files:
+        filename = "Books/TXT/"+ filename
+        convert(filename)
 if __name__ == "__main__":
     main()
