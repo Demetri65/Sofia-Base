@@ -46,7 +46,7 @@ class Navbar extends Component {
                     className="btn waves-effect waves-light orange lighten-3 black-text">test2</button>
                 </Link>
                 <Link
-                  to="/"
+                  to="/book"
                   style={{ fontFamily: "monospace" }}
                   className="col s1 right black-text"
                 >
