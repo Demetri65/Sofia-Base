@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
+import { Link } from "react-router-dom";
 class Dashboard extends Component {
   onLogoutClick = e => {
     e.preventDefault();
@@ -10,7 +11,8 @@ class Dashboard extends Component {
 render() {
     const { user } = this.props.auth;
 return (
-      <div style={{ height: "75vh" }} className="container valign-wrapper">
+    <div>
+      <div style={{ paddingTop: "25vh" }} className="container valign-wrapper">
         <div className="row">
           <div className="col s12 center-align">
             <h4>
@@ -19,22 +21,65 @@ return (
                 You are logged into{" "}
                 <span style={{ fontFamily: "monospace" }}>SofiaBase</span>
               </p>
-            </h4>
-            <button
-              style={{
-                width: "150px",
-                borderRadius: "3px",
-                letterSpacing: "1.5px",
-                marginTop: "1rem"
-              }}
-              onClick={this.onLogoutClick}
-              className="btn btn-large waves-effect waves-light hoverable orange lighten-3"
-            >
-              Logout
-            </button>
+            </h4> 
           </div>
         </div>
       </div>
+      <div className="container valign-wrapper">
+        <div style={{  }} className="row">
+          <div className="col center s12">
+            <Link
+              to="/profile" 
+              className="black-text"
+            >
+              <button 
+                style={{ 
+                  fontFamily: "monospace",
+                  width: "200px",
+                  height: "50px",
+                  borderRadius: "3px",
+                  letterSpacing: "1.5px"
+                }} 
+                className="btn waves-effect waves-light orange lighten-3 black-text">Profile</button>
+            </Link>
+          </div>
+          <div style={{ paddingTop: "5vh" }} className="col center s12">
+            <Link
+              to="/profile" 
+              className="black-text"
+            >
+              <button 
+                style={{ 
+                  fontFamily: "monospace",
+                  width: "200px",
+                  height: "50px",
+                  borderRadius: "3px",
+                  letterSpacing: "1.5px"
+                }} 
+                className="btn waves-effect waves-light orange lighten-3 black-text">Profile</button>
+            </Link>
+          </div>
+          <div style={{ paddingTop: "5vh" }} className="col center s12">
+            <Link
+              to="/profile" 
+              className="black-text"
+            >
+              <button 
+                style={{ 
+                  fontFamily: "monospace",
+                  width: "200px",
+                  height: "50px",
+                  borderRadius: "3px",
+                  letterSpacing: "1.5px"
+                }} 
+                className="btn waves-effect waves-light orange lighten-3 black-text">Profile</button>
+            </Link>
+          </div>
+       </div>
+     </div>
+    </div> 
+        
+      
     );
   }
 }
