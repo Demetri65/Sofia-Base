@@ -29,7 +29,7 @@ return (
         <div style={{  }} className="row">
           <div className="col center s12">
             <Link
-              to="/profile" 
+              to="/dashboard" 
               className="black-text"
             >
               <button 
@@ -40,12 +40,12 @@ return (
                   borderRadius: "3px",
                   letterSpacing: "1.5px"
                 }} 
-                className="btn waves-effect waves-light orange lighten-3 black-text">Profile</button>
+                className="btn waves-effect waves-light orange lighten-3 black-text">Testing</button>
             </Link>
           </div>
           <div style={{ paddingTop: "5vh" }} className="col center s12">
             <Link
-              to="/profile" 
+              to="/dashboard" 
               className="black-text"
             >
               <button 
@@ -56,7 +56,7 @@ return (
                   borderRadius: "3px",
                   letterSpacing: "1.5px"
                 }} 
-                className="btn waves-effect waves-light orange lighten-3 black-text">Profile</button>
+                className="btn waves-effect waves-light orange lighten-3 black-text">Test</button>
             </Link>
           </div>
           <div style={{ paddingTop: "5vh" }} className="col center s12">
