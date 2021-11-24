@@ -9,4 +9,3 @@ server:
 .PHONY: run
 run:
 	make server & make client
-

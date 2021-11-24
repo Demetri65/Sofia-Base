@@ -9465,8 +9465,8 @@
   "version" "17.0.2"
 
 "react-reader@^0.20.4":
-  "integrity" "sha512-cNY+SWKCoVbB1ecyf7YZkB1H8qkuCUysUPTrLFUWVaG7NDBBfES5m9EC7CJQhlQlMyFKYEmccryb8r30j0Gtxw=="
-  "resolved" "https://registry.npmjs.org/react-reader/-/react-reader-0.20.4.tgz"
+  "integrity" "sha1-3bwHvyvv3m4Sv7ICqZMv6OOta/E="
+  "resolved" "https://ab-inbev.pkgs.visualstudio.com/GHQ_B2B_Delta/_packaging/nfa-services/npm/registry/react-reader/-/react-reader-0.20.4.tgz"
   "version" "0.20.4"
   dependencies:
     "epubjs" "^0.3.88"
