@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { ReactReader } from "react-reader"
+import Ebook from "./EPUB/Meditations, Marcus Aurelius.epub"
 
 const BookComponent = () => {
   // And your own state logic to persist state
@@ -13,7 +14,7 @@ const BookComponent = () => {
       <ReactReader
         location={location}
         locationChanged={locationChanged}
-        url="https://gerhardsletten.github.io/react-reader/files/alice.epub"
+        url={Ebook}
       />
     </div>
   )
