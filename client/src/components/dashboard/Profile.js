@@ -86,7 +86,6 @@ return (
             // onSubmit={this.onSubmit}
             >
               <div className="input-field col s12">
-                  
                 <input
                 //   onChange={this.onChange}
                 //   value={this.state.email}
@@ -131,8 +130,6 @@ return (
             // onSubmit={this.onSubmit}
             >
               <div className="input-field col s12">
-                  
-                
               </div>
             </form>
           </div>
