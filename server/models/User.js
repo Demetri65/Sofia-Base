@@ -32,7 +32,7 @@ const UserSchema = new Schema({
   },
   discussHistory: {
     type: [String],
-    required: false
+    default: ["Discussion History"]
   },
 });
 module.exports = User = mongoose.model("users", UserSchema);

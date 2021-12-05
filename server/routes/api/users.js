@@ -10,6 +10,17 @@ const validateLoginInput = require("../../validation/login");
 const User = require("../../models/User");
 
 
+router.get("/post", (req, res) => {
+  User.findOne({ email: req.body.email.toLowerCase() }).then(user => {
+    if (!user) {
+      return res.status(400).json({ email: "User not found" });
+    } else {
+      let temp = user.discussHistory
+      return res.status(200).json({ temp })
+    }
+  })
+})
+
 // @route POST api/users/register
 // @desc Register user
 // @access Public

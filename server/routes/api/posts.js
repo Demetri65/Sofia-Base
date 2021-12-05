@@ -7,35 +7,30 @@ const Post = require("../../models/Post");
 const User = require("../../models/User");
 
 router.post("/post", (req, res) => {
-    User.findOne({ email: req.body.email.toLowerCase()}).then(user => {
-        if (!user) {
-          return res.status(400).json({ email: "Email does not exist" });
-        } else {
-        }
-    });
-    Post.findOne({ email: req.body.email.toLowerCase(), title: req.body.title.toLowerCase()}).then(post => {
+    Post.findOne({ email: req.body.email.toLowerCase(), title: req.body.title}).then(post => {
         if (post) {
             return res.status(400).json({ title: "Title already exists" });
         } else {
             newPost = new Post({
-                name: req.body.name,
                 email: req.body.email.toLowerCase(),
                 title: req.body.title
             });
             newPost.save()
-            // return res.status(200).json({ Success: "Post Created!" });
+        }
+    })
+    .then( () => {
+      return User.findOneAndUpdate({ email: req.body.email.toLowerCase() }, { $push: { discussHistory: "Post: " + req.body.title } })
+    })
+    .then(user => {
+        if (!user) {
+          return res.status(400).json({ email: "Email does not exist" });
+        } else {
+          return res.status(200).json({ Success: "Post created!" })
         }
     });
-    if (discussHistory) {
-        User.findOneAndUpdate({ email: req.body.email.toLowerCase() }, { $push: { discussHistory: req.body.title } }).then(user => {
-            if (!user) {
-              return res.status(400).json({ email: "Email does not exist" });
-            } else {
-              return res.status(200).json({ Success: "Post created!" })
-            }
-        })
-    }
 });
+
+
 
 router.patch("/comment", (req, res) => {
     let comment = req.body.comments
