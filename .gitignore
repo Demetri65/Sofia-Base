@@ -5,6 +5,7 @@
 /server/node_modules
 /.pnp
 .pnp.js
+pythonServer/serverEnv
 
 # testing
 /coverage
