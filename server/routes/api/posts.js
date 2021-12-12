@@ -30,9 +30,9 @@ router.post("/post", (req, res) => {
     });
 });
 
-router.get("/posts", (req, res) => {
-    const posts = Post.find({})
-    return res.status(200).send( posts)
+router.get("/posts", async (req, res) => {
+    const posts = await Post.find({})
+    return res.status(200).send( posts )
 });
 
 
