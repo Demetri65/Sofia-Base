@@ -3,7 +3,7 @@ from flask import jsonify
 import openai
 import chronological
 import asyncio
-openai.api_key = ""
+openai.api_key = "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"
 
 bookdict = {"file-dA1NAQP0COzQVIgVEmjgyEHR":"The Will to Power, Friedrich Nietzsche",
             "file-nZYR9KwR4WMElBvnPzj9bTiV":"The Critique of Pure Reason, Immanuel Kant",

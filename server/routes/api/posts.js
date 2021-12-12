@@ -37,17 +37,15 @@ router.get("/posts", async (req, res) => {
 
 
 router.put("/comment", (req, res) => {
-    Post.findOneAndUpdate({ 
-            postEmail: req.body.email.toLowerCase(), 
-            postTitle: req.body.title },
-            { $push: { comments: req.body.comment } })
-        .then(error => {
-        if (error) {
-            return res.status(200).json(error)
-        } else {
-            return res.status(200).json({ Success: "Comment Created" })
-        }
-      });
+    let post = Post.findById(req.body.id);
+    if (!post) res.status(400).send("Post Not Found");
+    let comment = {
+      text: req.body.comment,
+      email: req.body.email,
+    };
+    Post.findOneAndUpdate({_id: req.body.id}, { $push: { comments: comment}})
+      .then(() => res.status(200).send("Success!"))
+      .catch(error => console.log(error));
     });
  
 

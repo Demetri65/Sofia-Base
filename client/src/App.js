@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import * as proxy from 'http-proxy-middleware';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
@@ -11,8 +12,10 @@ import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import Dashboard from "./components/dashboard/Dashboard";
-import Profile from "./components/dashboard/Profile";
+import Profile from "./components/dashboard/ProvileV2";
 import Book from "./components/book/Book";
+import Posts from "./components/Posts/Posts";
+import Discussion from "./components/Discussion/Discussion";
 
 
 // Check for token to keep user logged in
@@ -46,6 +49,8 @@ class App extends Component {
             <Route exact path="/login" component={Login} />
             <Route exact path="/profile" component={Profile} />
             <Route exact path="/books" component={Book} />
+            <Route exact path="/posts" component={Posts} />
+            <Route exact path="/Discussion" component={Discussion} />
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
             </Switch>
