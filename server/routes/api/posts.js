@@ -30,83 +30,26 @@ router.post("/post", (req, res) => {
     });
 });
 
+router.get("/posts", (req, res) => {
+    const posts = Post.find({})
+    return res.status(200).send( posts)
+});
 
 
-router.patch("/comment", (req, res) => {
-    let comment = req.body.comments
-    User.findOne({ email: req.body.email.toLowerCase()}, {}).then(user => {
-        if (user) {
-            res.status(200).json(user)
-        //   return res.status(400).json({ email: "Email already exists" });
+router.put("/comment", (req, res) => {
+    Post.findOneAndUpdate({ 
+            postEmail: req.body.email.toLowerCase(), 
+            postTitle: req.body.title },
+            { $push: { comments: req.body.comment } })
+        .then(error => {
+        if (error) {
+            return res.status(200).json(error)
         } else {
-        
-    //       const updateUser = new User({
-    //         password: req.body.password
-    //       });
-    // // Hash password before saving in database
-    //       bcrypt.genSalt(10, (err, salt) => {
-    //         bcrypt.hash(newUser.password, salt, (err, hash) => {
-    //           if (err) throw err;
-    //           newUser.password = hash;
-    //           newUser
-    //             .save()
-    //             .then(user => res.json(user))
-    //             .catch(err => console.log(err));
-    //         });
-    //       });
+            return res.status(200).json({ Success: "Comment Created" })
         }
       });
-      return res
     });
-  
-  // @route POST api/users/login
-  // @desc Login user and return JWT token
-  // @access Public
-//   router.post("/login", (req, res) => {
-//     // Form validation
-//   const { errors, isValid } = validateLoginInput(req.body);
-//   // Check validation
-//     if (!isValid) {
-//       return res.status(400).json(errors);
-//     }
-//   const email = req.body.email.toLowerCase();
-//     const password = req.body.password;
-//   // Find user by email
-//     User.findOne({ email }).then(user => {
-//       // Check if user exists
-//       if (!user) {
-//         return res.status(404).json({ emailnotfound: "Email not found" });
-//       }
-//   // Check password
-//       bcrypt.compare(password, user.password).then(isMatch => {
-//         if (isMatch) {
-//           // User matched
-//           // Create JWT Payload
-//           const payload = {
-//             id: user.id,
-//             name: user.name
-//           };
-//   // Sign token
-//           jwt.sign(
-//             payload,
-//             keys.secretOrKey,
-//             {
-//               expiresIn: 31556926 // 1 year in seconds
-//             },
-//             (err, token) => {
-//               res.json({
-//                 success: true,
-//                 token: "Bearer " + token,
-//               });
-//             }
-//           );
-//         } else {
-//           return res
-//             .status(400)
-//             .json({ passwordincorrect: "Password incorrect" });
-//         }
-//       });
-//     });
-//   });
-  
+ 
+
+ 
   module.exports = router;

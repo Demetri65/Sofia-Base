@@ -9,6 +9,48 @@ const validateLoginInput = require("../../validation/login");
 // Load User model
 const User = require("../../models/User");
 
+router.post("/profession", (req, res) => {
+  User.findOneAndUpdate({ email: req.body.email.toLowerCase() }, { profession: req.body.profession }).then(user => {
+    if (!user) {
+      return res.status(400).json({ email: "User not found" });
+    } else {
+      return res.status(200).json({ Sucess: "Success" })
+    }
+  })
+})
+
+router.get("/profession", (req, res) => {
+  User.findOneAndUpdate({ email: req.body.email.toLowerCase() }).then(user => {
+    if (!user) {
+      return res.status(400).json({ email: "User not found" });
+    } else {
+      return res.status(200).json( user.profession )
+    }
+  })
+})
+
+router.post("/interests", (req, res) => {
+  User.findOneAndUpdate({ email: req.body.email.toLowerCase() }, { $push: { interests: req.body.interests } }).then(user => {
+    if (!user) {
+      return res.status(400).json({ email: "User not found" });
+    } else {
+      return res.status(200).json({ Sucess: "Success" })
+    }
+  })
+})
+
+
+
+router.get("/interests", (req, res) => {
+  User.findOne({ email: req.body.email.toLowerCase() }).then(user => {
+    if (!user) {
+      return res.status(400).json({ email: "User not found" });
+    } else {
+      return res.status(200).json( user.interests )
+    }
+  })
+})
+
 
 router.get("/post", (req, res) => {
   User.findOne({ email: req.body.email.toLowerCase() }).then(user => {
@@ -20,6 +62,8 @@ router.get("/post", (req, res) => {
     }
   })
 })
+
+
 
 // @route POST api/users/register
 // @desc Register user
