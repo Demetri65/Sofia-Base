@@ -8,9 +8,9 @@ app = Flask(__name__)
 cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
 
-app.register_blueprint(textLink,url_prefix='/textlink')
-app.register_blueprint(summaryGen,url_prefix='/summarygen')
-app.register_blueprint(discussQ,url_prefix='/discussq')
+app.register_blueprint(textLink,url_prefix='/ml/textlink')
+app.register_blueprint(summaryGen,url_prefix='/ml/summarygen')
+app.register_blueprint(discussQ,url_prefix='/ml/discussq')
 
 
 if __name__== "__main__":

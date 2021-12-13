@@ -29,7 +29,7 @@ return (
         <div style={{  }} className="row">
           <div className="col center s12">
             <Link
-              to="/dashboard" 
+              to="/books"
               className="black-text"
             >
               <button 
@@ -40,12 +40,30 @@ return (
                   borderRadius: "3px",
                   letterSpacing: "1.5px"
                 }} 
-                className="btn waves-effect waves-light orange lighten-3 black-text">Testing</button>
+                className="btn waves-effect waves-light orange lighten-3 black-text">Books</button>
             </Link>
           </div>
+
+          <div className="col center s12">
+            <Link
+              to="/discussion"
+              className="black-text"
+            >
+              <button
+                style={{
+                  fontFamily: "monospace",
+                  width: "200px",
+                  height: "50px",
+                  borderRadius: "3px",
+                  letterSpacing: "1.5px"
+                }}
+                className="btn waves-effect waves-light orange lighten-3 black-text">Discussion</button>
+            </Link>
+          </div>
+
           <div style={{ paddingTop: "5vh" }} className="col center s12">
             <Link
-              to="/dashboard" 
+              to="/posts"
               className="black-text"
             >
               <button 
@@ -56,7 +74,7 @@ return (
                   borderRadius: "3px",
                   letterSpacing: "1.5px"
                 }} 
-                className="btn waves-effect waves-light orange lighten-3 black-text">Test</button>
+                className="btn waves-effect waves-light orange lighten-3 black-text">Posts</button>
             </Link>
           </div>
           <div style={{ paddingTop: "5vh" }} className="col center s12">

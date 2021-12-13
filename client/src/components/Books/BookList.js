@@ -10,7 +10,7 @@ const BookList = () => {
   const [summary, setSummary] = useState(undefined);
 
   const handleGetSummary = async() => {
-    fetch(`/summarygen/${title}/${author}`, { method: 'GET'})
+    fetch(`/ml/summarygen/${title}/${author}`, { method: 'GET'})
       .then((res) => res.json())
       .then((res) => setSummary(res))
       .catch((error) => console.log(error))

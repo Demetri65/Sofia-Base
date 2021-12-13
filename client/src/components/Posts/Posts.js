@@ -80,7 +80,7 @@ const Posts = () => {
   }
 
   const handleSubmitComment = async (id, body, email) => {
-    fetch('/api/posts/comment', {
+    fetch('localhost:5000/api/posts/comment', {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'

@@ -8,7 +8,7 @@ const Discussion = () => {
 
 
   const handleDiscussionGenSubmit = async () => {
-    fetch(`/discussq/${discTitle}/${discAuthor}`, { method: 'GET'})
+    fetch(`/ml/discussq/${discTitle}/${discAuthor}`, { method: 'GET'})
       .then((res) => res.json())
       .then((res) => {
         console.log(res);

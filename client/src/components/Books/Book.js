@@ -13,7 +13,7 @@ const Book = () => {
   }
 
   const handleSubmitSimmilar = () => {
-    fetch(`/textlink/${selection}`, { method: 'GET'})
+    fetch(`/ml/textlink/${selection}`, { method: 'GET'})
       .then((res) => res.json())
       .then((res) => console.log(res))
       .catch((error) => console.log(error));

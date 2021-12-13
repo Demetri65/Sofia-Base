@@ -17,21 +17,6 @@ import BookList from "./components/Books/BookList";
 import Book from "./components/Books/Book";
 import Posts from "./components/Posts/Posts";
 import Discussion from "./components/Discussion/Discussion";
-import MarcusAurelius from "./components/book/booksJS/MarcusAurelius.js";
-import Voltaire from "./components/book/booksJS/Voltaire.js";
-import AristotleEthics from "./components/book/booksJS/AristotleEthics.js";
-import AristotleCategories from "./components/book/booksJS/AristotleCategories.js";
-import AristotlePhysics from "./components/book/booksJS/AristotlePhysics.js";
-import AristotlePoetics from "./components/book/booksJS/AristotlePoetics.js";
-import AristotlePolitics from "./components/book/booksJS/AristotlePolitics.js";
-import PlatoApology from "./components/book/booksJS/PlatoApology";
-import PlatoRepublic from "./components/book/booksJS/PlatoRepublic";
-import PlatoSymposium from "./components/book/booksJS/PlatoSymposium";
-import HomerIliad from "./components/book/booksJS/HomerIliad";
-import HomerOdyssey from "./components/book/booksJS/HomerOdyssey";
-import DarwinOrigin from "./components/book/booksJS/DarwinOrigin";
-import EinsteinRelativity from "./components/book/booksJS/EinsteinRelativity";
-import FreudPsycho from "./components/book/booksJS/FreudPsycho";
 
 
 // Check for token to keep user logged in
@@ -68,21 +53,6 @@ class App extends Component {
             <Route exact path="/Discussion" component={Discussion} />
             <Route exact path="/books" component={BookList} />
             <Route exact path="/book" component={Book}/>
-            <Route exact path="/marcus-aurelius" component={MarcusAurelius} />
-            <Route exact path="/voltaire" component={Voltaire} />
-            <Route exact path="/aristotle-nicomachean_ethics" component={AristotleEthics} />
-            <Route exact path="/aristotle-categories" component={AristotleCategories} />
-            <Route exact path="/aristotle-physics" component={AristotlePhysics} />
-            <Route exact path="/aristotle-poetics" component={AristotlePoetics} />
-            <Route exact path="/aristotle-politics" component={AristotlePolitics} />
-            <Route exact path="/plato-apology" component={PlatoApology} />
-            <Route exact path="/plato-republic" component={PlatoRepublic} />
-            <Route exact path="/plato-symposium" component={PlatoSymposium} />
-            <Route exact path="/homer-iliad" component={HomerIliad} />
-            <Route exact path="/homer-odyssey" component={HomerOdyssey} />
-            <Route exact path="/darwin-origin_of_species" component={DarwinOrigin} />
-            <Route exact path="/einstein-relativity" component={EinsteinRelativity} />
-            <Route exact path="/freud-intro_to_psychoanalysis" component={FreudPsycho} />
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
             </Switch>
